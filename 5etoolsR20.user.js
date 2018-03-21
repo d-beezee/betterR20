@@ -2,7 +2,7 @@
 // @name         5etoolsR20
 // @namespace    https://rem.uz/
 // @license      MIT (https://opensource.org/licenses/MIT)
-// @version      1.4.0
+// @version      1.4.1-SNAPSHOT
 // @updateURL    https://get.5etools.com/5etoolsR20.user.js
 // @downloadURL  https://get.5etools.com/5etoolsR20.user.js
 // @description  Enhance your Roll20 experience
@@ -853,8 +853,8 @@ var D20plus = function(version) {
 		window.unwatch("d20");
 		const checkLoaded = setInterval(function() {
 			if (!$("#loading-overlay").is(":visible")) {
+				clearInterval(checkLoaded);
 				setTimeout(() => {
-					clearInterval(checkLoaded);
 					d20plus.Init();
 				}, 10000);
 			}
